@@ -44,7 +44,8 @@ int Stack::pop()
     }
     else
     {
-        return S[top--];
+        int x = S[top--];
+        return x;
     }
 }
 
@@ -86,33 +87,35 @@ void Stack::Display()
     cout << endl;
 }
 
+bool isBalanced(string str)
+{
+    Stack stack;
+    for(int i=0; i<str.length(); i++){
+        if(str[i]=='('){
+            stack.push(str[i]);
+        }
+        else if(str[i]==')'){
+            if(stack.isEmpty())
+                return false;
+            stack.pop();
+        }
+    }
+    if(stack.isEmpty())
+        return true;
+    else return false;
+}
+
 int main()
 {
-    class Stack s;
-    s.push(10);
-    s.push(20);
-    s.push(30);
-    s.push(40);
-    s.push(50);
-    s.push(60);
-    s.push(70);
+    string str= "((a+b)*(c-d))";
+    //cin >> str;
 
-    s.Display();
-
-    cout << "Top value: "<<s.stackTop()<<endl;
-
-    cout << "Value of position 3: " << s.peek(3) << endl;
-
-    cout << "pop: " << s.pop() << endl;
+    cout<<"res: "<<isBalanced(str);
 
     return 0;
 }
 
-
 /*      output
 //----------------------------------------
-    Stack values: 70 60 50 40 30 20 10 
-    Top value: 70
-    Value of position 3: 50
-    pop: 70
+    res: 1
 */
