@@ -40,7 +40,9 @@ int isBalance(string str)
 int main()
 {
     string str = "{([a+b]*[c-d])/c}";        // "{(a+b) [c}"
+    
     int x = isBalance(str);
+
     if(x == 1) cout<<"String is balance.";
     else cout<<"String is not balance!";
 }

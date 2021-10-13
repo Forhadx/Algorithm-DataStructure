@@ -1,0 +1,41 @@
+
+### Types of Datastructues
+		|
+		|- Primitive
+		|
+		|- Non Primitive
+
+
+	-> Primitive
+		|- Integer
+		|- Float
+		|- Character
+		|- String
+		|- Boolean
+		
+		
+	-> Non Primitive
+		|
+		|- Linear
+		|	|- Static
+		|	|	|- Array
+		|	|
+		|	|- Dynamic
+		|		|- Linked List
+		|		|- Stack
+		|		|- Queue
+		|	
+		|
+		|- Non Linear
+		|	|-Tree
+		|	|- Graph
+		
+
+### Types of Algorithm
+		
+		- Simple recursive algorithms
+		- Divide and conquer Algorithm
+		- Dynamic programming algorithms
+		- Greedy algorithms
+		- brute force algorithms
+		- Randomized algorithms
