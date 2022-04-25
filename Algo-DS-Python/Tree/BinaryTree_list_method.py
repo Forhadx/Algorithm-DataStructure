@@ -74,7 +74,7 @@ print('find 7: ',searchNode(12))
 print('preoder:- ')
 preOrder(0) # 1 2 4 8 9 5 3 6 7
 
-
+ 
 print('\ninOrder:- ')
 inOrder(0) # 8 4 9 2 5 1 6 3 7
 
