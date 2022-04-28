@@ -1,0 +1,5 @@
+# types of linkedlist:
+    - singly linkedlist
+    - circular singly linkedlist 
+    - doubly linkedlist
+    - circular doubly linkedlist 
