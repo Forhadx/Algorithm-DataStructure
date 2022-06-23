@@ -1,13 +1,12 @@
-
-            queue.add(node);
-            while(!queue.isEmpty()){
-                GraphNode currentNode = queue.remove(0);
-                currentNode.isVisited = true;
-                System.out.print(currentNode.name+" ");
-                for(GraphNode neighbor: currentNode.neighbors){
-                    if(!neighbor.isVisited){
-                        queue.add(neighbor);
-                        neighbor.isVisited = true;
-                    }
-                }
-            }
+g.addEdge(0, 1);  
+        g.addEdge(0, 3);  
+        g.addEdge(0, 4);  
+        g.addEdge(4, 5);  
+        g.addEdge(3, 5);  
+        g.addEdge(1, 2);  
+        g.addEdge(1, 0);  
+        g.addEdge(2, 1);  
+        g.addEdge(4, 1);  
+        g.addEdge(3, 1);  
+        g.addEdge(5, 4);  
+        g.addEdge(5, 3);  
