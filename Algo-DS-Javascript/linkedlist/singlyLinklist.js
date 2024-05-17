@@ -35,7 +35,7 @@ class LinkList {
 
   insertByLoc(value, loc) {
     // Invalid loc
-    if (loc < 0 && size < loc) {
+    if (loc < 0 || this.size < loc) {
       console.log("Invalid location!");
     }
 
@@ -46,18 +46,7 @@ class LinkList {
       this.head = newNode;
       this.size++;
     }
-
-    // insert last
-    else if (loc === this.size) {
-      let newNode = new Node(value);
-      let tempHead = this.head;
-      while (tempHead.next !== null) {
-        tempHead = tempHead.next;
-      }
-      tempHead.next = newNode;
-      this.size++;
-    }
-
+    
     // insert any loc
     else {
       let newNode = new Node(value);
@@ -71,12 +60,13 @@ class LinkList {
         tempHead = tempHead.next;
         i++;
       }
+      this.size++;
     }
   }
 
   deleteByLoc(loc) {
     // Invalid loc
-    if (loc < 0 && size < loc) {
+    if (loc < 0 || this.size < loc) {
       console.log("Invalid location!");
     }
 
@@ -87,23 +77,14 @@ class LinkList {
       this.size--;
     }
 
-    // delete last
-    // else if (loc === this.size) {
-    //   let tempHead = this.head;
-    //   while (tempHead.next !== null) {
-    //     tempHead = tempHead.next;
-    //   }
-    //   tempHead.next = null;
-    //   this.size++;
-    // }
-
     // insert any loc
     else {
       let tempHead = this.head;
       let i = 0;
       while (tempHead !== null) {
-        if (i === loc - 1) {
-          tempHead.next = tempHead.next;
+        if (i === loc - 2) {
+          tempHead.next = tempHead.next.next;
+          break;
         }
         tempHead = tempHead.next;
         i++;
@@ -151,12 +132,10 @@ lList.insertLast(33);
 
 lList.insertByLoc(57, 3);
 
-// console.log(lList);
-
 lList.traverse();
 
 console.log("After delete");
-lList.deleteByLoc(0);
+lList.deleteByLoc(6);
 lList.traverse();
 
 lList.manualSize();
